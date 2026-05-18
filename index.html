@@ -24,280 +24,8 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/109288773" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
- 
-    <style>
-        /* UI-кит АльфаСтрахование */
-        :root {
-            --alfa-red: #ef3124;
-            --alfa-red-hover: #cc251a;
-            --text-main: #2b2b2b;
-            --text-muted: #6b6b6b;
-            --bg-light: #f7f7f7;
-            --white: #ffffff;
-            --border-color: #e0e0e0;
-            --error: #d32f2f;
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-main);
-            background-color: var(--white);
-            line-height: 1.5;
-            scroll-behavior: smooth;
-        }
-
-        /* Информационная архитектура: Навигация */
-        header {
-            background-color: var(--white);
-            padding: 1.2rem 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--alfa-red);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2.5rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 600;
-            transition: color 0.2s ease;
-        }
-
-        nav a:hover {
-            color: var(--alfa-red);
-        }
-
-        /* Секции */
-        section {
-            padding: 5rem 5%;
-            scroll-margin-top: 80px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--text-main);
-        }
-
-        /* Hero секция */
-        .hero {
-            background-color: var(--bg-light);
-            text-align: center;
-            padding: 6rem 5%;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 2rem auto;
-        }
-
-        /* Карточки продуктов */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .product-card {
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: left;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-        }
-
-        .product-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--alfa-red);
-        }
-        .product-card p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-
-        /* Форма сбора данных (Этичный дизайн и 152-ФЗ) */
-        .form-section {
-            background-color: var(--bg-light);
-        }
-
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        input[type="text"], 
-        input[type="tel"] {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: border-color 0.2s;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: var(--alfa-red);
-        }
-
-        .error-state {
-            border-color: var(--error) !important;
-        }
-
-        .error-msg {
-            color: var(--error);
-            font-size: 0.85rem;
-            margin-top: 0.4rem;
-            display: none;
-        }
-
-        /* Микротекст для снижения когнитивной нагрузки */
-        .microcopy {
-            display: block;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 0.4rem;
-        }
-
-        /* Блок согласия 152-ФЗ */
-        .consent-wrapper {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin-top: 1rem;
-        }
-
-        .consent-wrapper input[type="checkbox"] {
-            margin-top: 4px;
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-        }
-
-        .consent-text {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
-
-        .consent-text a {
-            color: var(--alfa-red);
-            text-decoration: underline;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--alfa-red);
-            color: var(--white);
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background-color 0.2s;
-            width: 100%;
-            margin-top: 1.5rem;
-        }
-
-        .btn:hover {
-            background-color: var(--alfa-red-hover);
-        }
-
-        .success-panel {
-            display: none;
-            background-color: #e8f5e9;
-            border-left: 4px solid #4caf50;
-            padding: 1.5rem;
-            border-radius: 4px;
-            text-align: center;
-        }
-
-        footer {
-            background-color: var(--text-main);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem 5%;
-            font-size: 0.9rem;
-        }
-
-        /* Адаптивность */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            nav ul {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .form-container {
-                padding: 1.5rem;
-            }
-        }
-    </style>
-</head>
-<body>
+<link rel="stylesheet" href="style.css">   
 
     <header>
         <a href="#" class="logo">АльфаСтрахование</a>
@@ -330,6 +58,32 @@
                 <div class="product-card">
                     <h3>Путешествия</h3>
                     <p>Страховка для визы и спокойного отдыха по всему миру. Защита от отмены рейса и потери багажа.</p>
+                </div>
+            </div>
+        </section>
+
+<section id="advantages" style="background-color: var(--bg-light);">
+            <h2 class="section-title">Почему выбирают АльфаСтрахование</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">⚡</div>
+                    <h3>Оформление за 5 минут</h3>
+                    <p>Полис приходит на вашу электронную почту сразу после оплаты. Никаких очередей и поездок в офис.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">📱</div>
+                    <h3>Онлайн-урегулирование</h3>
+                    <p>Дистанционное ведение страховых случаев через мобильное приложение без бумажной волокиты.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">🏆</div>
+                    <h3>Высший рейтинг</h3>
+                    <p>Рейтинг надежности ruAAA (Эксперт РА). Нам доверяют более 31 миллиона клиентов по всей России.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">🤝</div>
+                    <h3>Поддержка 24/7</h3>
+                    <p>Выделенная круглосуточная линия помощи и чат в приложении готовы решить любой вопрос в любой точке мира.</p>
                 </div>
             </div>
         </section>
